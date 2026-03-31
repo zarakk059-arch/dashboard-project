@@ -1,17 +1,14 @@
-import React from 'react'
-import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
-import Layout from './components/Layout'
+import React from "react";
+import Layout from "./components/Layout";
+import Ecommerce from "./components/Ecommerce";
 
 const App = () => {
   return (
-    <div>
-    <Sidebar/>
-    <Navbar/>
-    <Layout/>
-      
-    </div>
-  )
-}
+    <Layout>
+   
+    </Layout>
+    
+  );
+};
 
-export default App
+export default App;

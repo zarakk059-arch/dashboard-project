@@ -3,39 +3,30 @@ import Logo from "../../public/Logo/logo (2).png";
 import { GiSurroundedEye } from "react-icons/gi";
 import { RiDashboard2Fill } from "react-icons/ri";
 import { IoChevronDown } from "react-icons/io5";
-import {
-  FaShoppingCart,
-  FaComments,
-  FaProjectDiagram,
-  FaFileInvoice,
-} from "react-icons/fa";
+import { FaShoppingCart, FaComments, FaProjectDiagram, FaFileInvoice } from "react-icons/fa";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const [openDashboard, setOpenDashboard] = useState(true);
 
   return (
     <>
+      {/* Sidebar */}
       <div
         className={`
           fixed top-0 left-0 h-screen w-64 bg-black/85 text-gray-300 p-2
           transform transition-transform duration-300
-          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
+          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0 lg:static z-40
         `}
       >
+        {/* Logo */}
         <div className="mb-4 flex items-end gap-3">
-          <img
-            src={Logo}
-            alt="Logo"
-            className="w-20 h-20 object-contain ml-5 -mt-1"
-          />
+          <img src={Logo} alt="Logo" className="w-20 h-20 object-contain ml-5 -mt-1" />
           <GiSurroundedEye className="text-2xl text-gray-400 mb-6 ml-17" />
         </div>
 
-        <h2 className="text-xs text-gray-500 mb-3 font-bold tracking-widest">
-          MAIN
-        </h2>
-
+        {/* Dashboard */}
+        <h2 className="text-xs text-gray-500 mb-3 font-bold tracking-widest">MAIN</h2>
         <div>
           <div
             onClick={() => setOpenDashboard(!openDashboard)}
@@ -45,12 +36,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <RiDashboard2Fill className="text-lg" />
               <span className="text-sm">Dashboard</span>
             </div>
-
-            <IoChevronDown
-              className={`text-sm transition-transform duration-300 ${
-                openDashboard ? "rotate-180" : ""
-              }`}
-            />
+            <IoChevronDown className={`text-sm transition-transform duration-300 ${openDashboard ? "rotate-180" : ""}`} />
           </div>
 
           {openDashboard && (
@@ -64,10 +50,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           )}
         </div>
 
-        <h2 className="text-xs text-gray-500 mt-9 mb-4 font-bold tracking-widest">
-          APPS
-        </h2>
-
+        {/* Apps */}
+        <h2 className="text-xs text-gray-500 mt-9 mb-4 font-bold tracking-widest">APPS</h2>
         <div className="ml-6 space-y-2">
           <div className="flex items-center gap-2 px-2 py-2 hover:bg-[#1a1a1a] rounded-md">
             <FaShoppingCart className="text-lg" />
@@ -88,13 +72,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </div>
       </div>
 
-      {/* Overlay */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
+      {/* Overlay for mobile/tablet */}
+      {sidebarOpen && <div className="fixed inset-0 bg-black/50 z-30 lg:hidden" onClick={() => setSidebarOpen(false)} />}
     </>
   );
 };
