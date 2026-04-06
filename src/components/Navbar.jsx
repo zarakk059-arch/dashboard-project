@@ -108,7 +108,7 @@ const Navbar = ({ setSidebarOpen }) => {
                   className="flex justify-between items-center px-2 py-2 hover:bg-gray-100 rounded cursor-pointer"
                 >
                   {item}
-                  <IoChevronDown className="rotate-[-90deg] text-gray-400" />
+                  <IoChevronDown className="-rotate-90 text-gray-400" />
                 </div>
               ))}
             </div>
