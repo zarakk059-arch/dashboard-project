@@ -54,100 +54,121 @@ const Ecommerce = () => {
 
   return (
     <div className="w-full mt-23 px-4">
+
       {/* Header */}
       <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2 sm:gap-0">
         <h1 className="text-xl font-semibold">eCommerce</h1>
-        <div className="text-sm text-gray-500 whitespace-nowrap">
+        <div className="text-sm text-gray-500 whitespace-nowrap hidden sm:block">
           Pages <span className="mx-1">&gt;</span> Dashboard
           <span className="mx-1">&gt;</span>
           <span className="font-semibold text-gray-700">eCommerce</span>
         </div>
       </div>
 
-      {/* Main Flex Container */}
       <div className="flex flex-col lg:flex-row gap-4 items-start">
-        {/* Left Column - 4 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 min-w-0">
-          {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 relative w-full sm:w-full">
-            <div className="text-gray-500 font-medium text-sm">GOOD DAY,</div>
-            <div className="text-lg font-semibold">Zarak Dev!</div>
 
-            <div className="flex items-center justify-between mt-9 text-gray-500 text-sm">
-              <div className="flex items-center gap-1">
-                <FaRegCalendarAlt /> Mar 31, 2026
+        {/* LEFT CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+
+          {/* CARD 1 */}
+          <div className="bg-white rounded-xl shadow-md p-9 flex flex-col gap-6 relative w-full sm:w-full
+            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
+
+            <div className="flex flex-col gap-6 mobile:flex-1">
+              <div className="flex justify-between items-center mobile:items-start">
+                <span className="text-gray-500 text-sm font-medium">GOOD DAY,</span>
               </div>
-              <div className="flex items-center gap-1">
-                <FaRegClock /> {time.toLocaleTimeString()}
+              <div className="text-lg font-semibold">Zarak Dev!</div>
+
+              <div className="flex justify-between items-center gap-6 mobile:flex-row">
+                <div className="flex items-center gap-1 text-gray-500 text-sm">
+                  <FaRegCalendarAlt /> Mar 31, 2026
+                </div>
+                <div className="flex items-center gap-4 text-gray-500 text-sm ml-auto">
+                  <FaRegClock /> {time.toLocaleTimeString()}
+                </div>
               </div>
             </div>
 
             <img
               src={img}
               alt="User"
-              className="h-15 w-15 rounded-4xl object-contain absolute top-8 right-4 animate-bounce-slow"
+              className="h-12 w-12 rounded-4xl object-contain absolute right-5 animate-bounce-slow sm:block mobile:hidden"
             />
           </div>
 
-          {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-4 relative w-full sm:w-full">
-            <div className="absolute top-4 left-4 text-gray-500 text-sm font-medium">
-              ORDERS
-            </div>
-            <FaShoppingCart className="absolute top-4 right-4 text-blue-500 text-lg animate-pulse" />
-            <div className="text-xl font-semibold mt-12">9,754</div>
-            <div className="flex items-center justify-between mt-3 text-sm">
-              <div className="flex items-center gap-2 text-red-500 font-medium">
-                <FaArrowUp /> 1.89%
-                <span className="text-gray-400 font-normal flex flex-col items-center leading-4">
-                  <span>Since</span>
-                  <span>last</span>
-                  <span>month</span>
+          {/* CARD 2 */}
+          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
+            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
+
+            <div className="flex flex-col gap-6 mobile:flex-1">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-sm font-medium">ORDERS</span>
+                <FaShoppingCart className="text-blue-500 text-lg" />
+              </div>
+
+              <div className="text-xl font-semibold">9,754</div>
+
+              <div className="flex justify-between items-center text-sm">
+                <span className="flex items-center gap-2 text-red-500">
+                  <FaArrowUp /> 1.89%
+                </span>
+                <span className="text-gray-400 text-xs">
+                  since last month
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-4 relative w-full sm:w-full">
-            <div className="absolute top-4 left-4 text-gray-500 text-sm font-medium">
-              REVENUE
-            </div>
-            <LuSquareMousePointer className="absolute top-4 right-4 text-blue-500 text-lg animate-pulse" />
-            <div className="text-xl font-semibold mt-12">$75.21k</div>
-            <div className="flex items-center justify-between mt-3 text-sm">
-              <div className="flex items-center gap-2 text-red-500 font-medium">
-                <FaArrowUp /> 5.23%
-                <span className="text-gray-400 font-normal flex flex-col items-center leading-4">
-                  <span>Since</span>
-                  <span>last</span>
-                  <span>month</span>
+          {/* CARD 3 */}
+          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
+            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
+
+            <div className="flex flex-col gap-6 mobile:flex-1">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-sm font-medium">REVENUE</span>
+                <LuSquareMousePointer className="text-blue-500 text-lg" />
+              </div>
+
+              <div className="text-xl font-semibold">$75.21k</div>
+
+              <div className="flex justify-between items-center text-sm">
+                <span className="flex items-center gap-2 text-red-500">
+                  <FaArrowUp /> 5.23%
+                </span>
+                <span className="text-gray-400 text-xs">
+                  since last month
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Card 4 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-4 relative w-full sm:w-full">
-            <div className="absolute top-4 left-4 text-gray-500 text-sm font-medium">
-              GROWTH
-            </div>
-            <FaArrowTrendUp className="absolute top-4 right-4 text-blue-500 text-lg animate-pulse" />
-            <div className="text-xl font-semibold mt-12">9,754</div>
-            <div className="flex items-center justify-between mt-3 text-sm">
-              <div className="flex items-center gap-2 text-red-500 font-medium">
-                <FaArrowUp /> 1.89%
-                <span className="text-gray-400 font-normal flex flex-col items-center leading-4">
-                  <span>Since</span>
-                  <span>last</span>
-                  <span>month</span>
+          {/* CARD 4 */}
+          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
+            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
+
+            <div className="flex flex-col gap-6 mobile:flex-1">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-sm font-medium">GROWTH</span>
+                <FaArrowTrendUp className="text-blue-500 text-lg" />
+              </div>
+
+              <div className="text-xl font-semibold">9,754</div>
+
+              <div className="flex justify-between items-center text-sm">
+                <span className="flex items-center gap-2 text-red-500">
+                  <FaArrowUp /> 1.89%
+                </span>
+                <span className="text-gray-400 text-xs">
+                  since last month
                 </span>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* Right Column - Two Cards Side by Side */}
+        {/* RIGHT SIDE - DONUT + INSIGHTS (UNCHANGED) */}
         <div className="flex flex-col md:flex-row gap-4 flex-1 min-w-0">
           {/* Chart Card */}
           <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
@@ -193,39 +214,21 @@ const Ecommerce = () => {
             </button>
           </div>
 
-          {/* New Weekly Data Ranges Card */}
+          {/* Weekly Card */}
           <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
             <div className="flex items-center gap-2 text-md font-medium">
               <FaListUl /> Weekly Performance Insights
             </div>
 
-            {/* Range Chart */}
             <svg className="w-full h-40 mt-2">
               {[20, 40, 60, 80].map((y, idx) => (
-                <line
-                  key={idx}
-                  x1={0}
-                  x2="100%"
-                  y1={scaleY(y)}
-                  y2={scaleY(y)}
-                  stroke="#E5E7EB"
-                  strokeWidth={1}
-                />
+                <line key={idx} x1={0} x2="100%" y1={scaleY(y)} y2={scaleY(y)} stroke="#E5E7EB"/>
               ))}
 
               {weeklyRanges.map((range, index) => {
                 const x = (index * 100) / 6 + "%";
                 return (
-                  <line
-                    key={index}
-                    x1={x}
-                    x2={x}
-                    y1={scaleY(range.min)}
-                    y2={scaleY(range.max)}
-                    stroke="#3b82f6"
-                    strokeWidth={6}
-                    strokeLinecap="round"
-                  />
+                  <line key={index} x1={x} x2={x} y1={scaleY(range.min)} y2={scaleY(range.max)} stroke="#3b82f6" strokeWidth={6}/>
                 );
               })}
             </svg>
