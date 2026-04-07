@@ -31,7 +31,6 @@ const Ecommerce = () => {
   const stroke = 12;
   const normalizedRadius = radius - stroke / 2;
   const circumference = 2 * Math.PI * normalizedRadius;
-
   let cumulativePercent = 0;
 
   const weeklyRanges = [
@@ -53,10 +52,10 @@ const Ecommerce = () => {
   };
 
   return (
-    <div className="w-full mt-23 px-4">
+    <div className="w-full mt-19 px-4 sm:px-4">
       {/* Header */}
-      <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2 sm:gap-0">
-        <h1 className="text-xl font-semibold">eCommerce</h1>
+      <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between  gap-2 sm:gap-0">
+        <h1 className="text-2xl sm:text-2xl font-semibold">eCommerce</h1>
         <div className="text-sm text-gray-500 whitespace-nowrap hidden sm:block">
           Pages <span className="mx-1">&gt;</span> Dashboard
           <span className="mx-1">&gt;</span>
@@ -65,16 +64,15 @@ const Ecommerce = () => {
       </div>
 
       {/* Main Flex Container */}
-      <div className="flex flex-col lg:flex-row gap-4 p-8 items-start">
+      <div className="flex flex-col lg:flex-row gap-6 p-2 sm:p-8 items-start">
         {/* Left Column - 4 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 min-w-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 w-full">
           {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-5 relative w-full sm:w-full">
-            <div className="text-gray-500 font-medium text-sm">GOOD DAY,</div>
-            <div className="text-lg font-semibold">Zarak Dev!</div>
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 w-full h-full">
+            <h1 className="text-gray-500 font-medium text-sm">GOOD DAY,</h1>
+            <h2 className="text-lg font-semibold">Zarak Dev!</h2>
 
-            {/* Date & Time separated */}
-            <div className="flex justify-between mt-5 text-gray-500 text-sm gap-5">
+            <div className="flex justify-between mt-3 text-gray-500 text-sm gap-2">
               <div className="flex items-center gap-1">
                 <FaRegCalendarAlt /> Mar 31, 2026
               </div>
@@ -83,16 +81,15 @@ const Ecommerce = () => {
               </div>
             </div>
 
-            {/* Hide image on mobile */}
             <img
               src={img}
               alt="User"
-              className="h-15 w-15 rounded-4xl object-contain absolute top-8 right-4 animate-bounce-slow hidden sm:block"
+              className="h-12 w-12 rounded-full object-cover absolute top-3 right-3 animate-bounce-slow hidden sm:block"
             />
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 w-full h-full">
             <div className="flex justify-between items-center">
               <span className="text-gray-500 text-sm font-medium">ORDERS</span>
               <FaShoppingCart className="text-blue-500 text-lg" />
@@ -107,7 +104,7 @@ const Ecommerce = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 w-full h-full">
             <div className="flex justify-between items-center">
               <span className="text-gray-500 text-sm font-medium">REVENUE</span>
               <LuSquareMousePointer className="text-blue-500 text-lg" />
@@ -122,7 +119,7 @@ const Ecommerce = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 w-full h-full">
             <div className="flex justify-between items-center">
               <span className="text-gray-500 text-sm font-medium">GROWTH</span>
               <FaArrowTrendUp className="text-blue-500 text-lg" />
@@ -137,17 +134,19 @@ const Ecommerce = () => {
           </div>
         </div>
 
-        {/* Right Column - Donut & Weekly Insights */}
-        <div className="flex flex-col md:flex-row gap-4 flex-1 min-w-0">
+        {/* Right Column - 2 Cards stretched to match left height */}
+        <div className="flex flex-col md:flex-row gap-4 flex-1 w-full min-w-0 h-74">
           {/* Donut Chart Card */}
-          <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
-            <div className="text-md font-medium">Store Performance Analytics</div>
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col items-center gap-3 flex-1 h-full">
+            <div className="text-md font-medium text-center">
+              Store Performance Analytics
+            </div>
             <div className="flex items-center gap-2 text-gray-500 text-sm cursor-pointer hover:text-gray-700">
               <TbRefresh className="w-5 h-5" />
               <span>Refresh</span>
             </div>
 
-            <div className="relative w-40 h-40">
+            <div className="relative w-36 h-36 sm:w-40 sm:h-40">
               <svg className="w-full h-full -rotate-90">
                 {chartSegments.map((seg, index) => {
                   const dashArray = (seg.value / 100) * circumference;
@@ -178,18 +177,16 @@ const Ecommerce = () => {
               </div>
             </div>
 
-            <button className="flex items-center gap-2 mt-2 bg-red-50 text-red-500 px-3 py-1 rounded-md font-medium hover:bg-red-100">
-              <FaStar /> <span className="text-black"> POOR SALES </span>
-            </button>
+          
           </div>
 
           {/* Weekly Insights Card */}
-          <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col items-center gap-3 flex-1 h-full">
             <div className="flex items-center gap-2 text-md font-medium">
               <FaListUl /> Weekly Performance Insights
             </div>
 
-            <svg className="w-full h-40 mt-2">
+            <svg className="w-full h-36 sm:h-40 mt-2">
               {[20, 40, 60, 80].map((y, idx) => (
                 <line
                   key={idx}

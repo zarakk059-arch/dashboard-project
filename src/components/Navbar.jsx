@@ -157,7 +157,7 @@ const Navbar = ({ setSidebarOpen }) => {
       <div className="flex items-center gap-2 md:gap-3">
 
         {/* Mobile view */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-6 lg:hidden">
           <IoNotifications className="text-gray-600 text-xl cursor-pointer" />
           <GrLanguage className="text-gray-600 text-xl cursor-pointer" />
 
