@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import img from "../../public/images/image2.jpeg";
+import img from "../../public/images/Profile.jpg";
 import {
   FaRegCalendarAlt,
   FaRegClock,

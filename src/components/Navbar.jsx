@@ -6,7 +6,7 @@ import { CiBrightnessDown } from "react-icons/ci";
 import { MdOutlineColorLens, MdOutlineSettings } from "react-icons/md";
 import { GrLanguage } from "react-icons/gr";
 import { IoMdSearch } from "react-icons/io";
-import img from "../../public/images/image.jpeg";
+import img from "../../public/images/Profile.jpg";
 
 import {
   FaUser,

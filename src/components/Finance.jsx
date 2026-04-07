@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../../public/images/image7.jpeg";
+import img from "../../public/images/Finance.jpg";
 
 const Finance = () => {
   const [showCard, setShowCard] = useState(false);

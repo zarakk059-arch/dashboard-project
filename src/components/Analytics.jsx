@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../../public/images/image3.jpeg";
+import img from "../../public/images/Analytics.jpg";
 
 const Analytics = () => {
   const [showCard, setShowCard] = useState(false);
