@@ -54,7 +54,6 @@ const Ecommerce = () => {
 
   return (
     <div className="w-full mt-23 px-4">
-
       {/* Header */}
       <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2 sm:gap-0">
         <h1 className="text-xl font-semibold">eCommerce</h1>
@@ -65,112 +64,82 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4 items-start">
+      {/* Main Flex Container */}
+      <div className="flex flex-col lg:flex-row gap-4 p-8 items-start">
+        {/* Left Column - 4 Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 min-w-0">
+          {/* Card 1 */}
+          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-5 relative w-full sm:w-full">
+            <div className="text-gray-500 font-medium text-sm">GOOD DAY,</div>
+            <div className="text-lg font-semibold">Zarak Dev!</div>
 
-        {/* LEFT CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
-
-          {/* CARD 1 */}
-          <div className="bg-white rounded-xl shadow-md p-9 flex flex-col gap-6 relative w-full sm:w-full
-            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
-
-            <div className="flex flex-col gap-6 mobile:flex-1">
-              <div className="flex justify-between items-center mobile:items-start">
-                <span className="text-gray-500 text-sm font-medium">GOOD DAY,</span>
+            {/* Date & Time separated */}
+            <div className="flex justify-between mt-5 text-gray-500 text-sm gap-5">
+              <div className="flex items-center gap-1">
+                <FaRegCalendarAlt /> Mar 31, 2026
               </div>
-              <div className="text-lg font-semibold">Zarak Dev!</div>
-
-              <div className="flex justify-between items-center gap-6 mobile:flex-row">
-                <div className="flex items-center gap-1 text-gray-500 text-sm">
-                  <FaRegCalendarAlt /> Mar 31, 2026
-                </div>
-                <div className="flex items-center gap-4 text-gray-500 text-sm ml-auto">
-                  <FaRegClock /> {time.toLocaleTimeString()}
-                </div>
+              <div className="flex items-center gap-1 ml-auto">
+                <FaRegClock /> {time.toLocaleTimeString()}
               </div>
             </div>
 
+            {/* Hide image on mobile */}
             <img
               src={img}
               alt="User"
-              className="h-12 w-12 rounded-4xl object-contain absolute right-5 animate-bounce-slow sm:block mobile:hidden"
+              className="h-15 w-15 rounded-4xl object-contain absolute top-8 right-4 animate-bounce-slow hidden sm:block"
             />
           </div>
 
-          {/* CARD 2 */}
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
-            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
-
-            <div className="flex flex-col gap-6 mobile:flex-1">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500 text-sm font-medium">ORDERS</span>
-                <FaShoppingCart className="text-blue-500 text-lg" />
-              </div>
-
-              <div className="text-xl font-semibold">9,754</div>
-
-              <div className="flex justify-between items-center text-sm">
-                <span className="flex items-center gap-2 text-red-500">
-                  <FaArrowUp /> 1.89%
-                </span>
-                <span className="text-gray-400 text-xs">
-                  since last month
-                </span>
-              </div>
+          {/* Card 2 */}
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 text-sm font-medium">ORDERS</span>
+              <FaShoppingCart className="text-blue-500 text-lg" />
+            </div>
+            <div className="text-xl font-semibold mt-2">9,754</div>
+            <div className="flex justify-between items-center mt-2 text-sm">
+              <span className="flex items-center gap-1 text-red-500">
+                <FaArrowUp /> 1.89%
+              </span>
+              <span className="text-gray-400 text-xs">since last month</span>
             </div>
           </div>
 
-          {/* CARD 3 */}
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
-            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
-
-            <div className="flex flex-col gap-6 mobile:flex-1">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500 text-sm font-medium">REVENUE</span>
-                <LuSquareMousePointer className="text-blue-500 text-lg" />
-              </div>
-
-              <div className="text-xl font-semibold">$75.21k</div>
-
-              <div className="flex justify-between items-center text-sm">
-                <span className="flex items-center gap-2 text-red-500">
-                  <FaArrowUp /> 5.23%
-                </span>
-                <span className="text-gray-400 text-xs">
-                  since last month
-                </span>
-              </div>
+          {/* Card 3 */}
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 text-sm font-medium">REVENUE</span>
+              <LuSquareMousePointer className="text-blue-500 text-lg" />
+            </div>
+            <div className="text-xl font-semibold mt-2">$75.21k</div>
+            <div className="flex justify-between items-center mt-2 text-sm">
+              <span className="flex items-center gap-1 text-red-500">
+                <FaArrowUp /> 5.23%
+              </span>
+              <span className="text-gray-400 text-xs">since last month</span>
             </div>
           </div>
 
-          {/* CARD 4 */}
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-6 relative w-full sm:w-full
-            mobile:flex-row mobile:justify-between mobile:items-center mobile:gap-6">
-
-            <div className="flex flex-col gap-6 mobile:flex-1">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500 text-sm font-medium">GROWTH</span>
-                <FaArrowTrendUp className="text-blue-500 text-lg" />
-              </div>
-
-              <div className="text-xl font-semibold">9,754</div>
-
-              <div className="flex justify-between items-center text-sm">
-                <span className="flex items-center gap-2 text-red-500">
-                  <FaArrowUp /> 1.89%
-                </span>
-                <span className="text-gray-400 text-xs">
-                  since last month
-                </span>
-              </div>
+          {/* Card 4 */}
+          <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-5 relative w-full sm:w-full">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 text-sm font-medium">GROWTH</span>
+              <FaArrowTrendUp className="text-blue-500 text-lg" />
+            </div>
+            <div className="text-xl font-semibold mt-2">9,754</div>
+            <div className="flex justify-between items-center mt-2 text-sm">
+              <span className="flex items-center gap-1 text-red-500">
+                <FaArrowUp /> 1.89%
+              </span>
+              <span className="text-gray-400 text-xs">since last month</span>
             </div>
           </div>
-
         </div>
 
-        {/* RIGHT SIDE - DONUT + INSIGHTS (UNCHANGED) */}
+        {/* Right Column - Donut & Weekly Insights */}
         <div className="flex flex-col md:flex-row gap-4 flex-1 min-w-0">
-          {/* Chart Card */}
+          {/* Donut Chart Card */}
           <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
             <div className="text-md font-medium">Store Performance Analytics</div>
             <div className="flex items-center gap-2 text-gray-500 text-sm cursor-pointer hover:text-gray-700">
@@ -214,7 +183,7 @@ const Ecommerce = () => {
             </button>
           </div>
 
-          {/* Weekly Card */}
+          {/* Weekly Insights Card */}
           <div className="bg-white rounded-xl shadow-md p-5 flex-1 h-95 flex flex-col items-center gap-4">
             <div className="flex items-center gap-2 text-md font-medium">
               <FaListUl /> Weekly Performance Insights
@@ -222,13 +191,30 @@ const Ecommerce = () => {
 
             <svg className="w-full h-40 mt-2">
               {[20, 40, 60, 80].map((y, idx) => (
-                <line key={idx} x1={0} x2="100%" y1={scaleY(y)} y2={scaleY(y)} stroke="#E5E7EB"/>
+                <line
+                  key={idx}
+                  x1={0}
+                  x2="100%"
+                  y1={scaleY(y)}
+                  y2={scaleY(y)}
+                  stroke="#E5E7EB"
+                  strokeWidth={1}
+                />
               ))}
 
               {weeklyRanges.map((range, index) => {
                 const x = (index * 100) / 6 + "%";
                 return (
-                  <line key={index} x1={x} x2={x} y1={scaleY(range.min)} y2={scaleY(range.max)} stroke="#3b82f6" strokeWidth={6}/>
+                  <line
+                    key={index}
+                    x1={x}
+                    x2={x}
+                    y1={scaleY(range.min)}
+                    y2={scaleY(range.max)}
+                    stroke="#3b82f6"
+                    strokeWidth={6}
+                    strokeLinecap="round"
+                  />
                 );
               })}
             </svg>
